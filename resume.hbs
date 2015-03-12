@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 	
-	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+	<title>{{resume.basics.name}}</title>
 
 	<style>
 	{{{css}}}
@@ -20,66 +20,19 @@
 	<h1>{{name}}</h1>
 	<h2>{{label}}</h2>
 	<section id="basics">
-		<div class="contact">
-		{{#if website}}
-		<div class="website">
-			<strong>Website</strong>
-			{{website}}
-		</div>
-		{{/if}}
-		{{#if email}}
-		<div class="email">
-			<strong>Email</strong>
-			{{email}}
-		</div>
-		{{/if}}
-		{{#if phone}}
-		<div class="phone">
-			<strong>Phone</strong>
-			{{phone}}
-		</div>
-		{{/if}}
-		</div>
+    <div class=''>
+      {{#if email}}<span>{{email}}</span>{{/if}}
+      {{#if phone}} | <span>{{phone}}</span>{{/if}}
+      {{#location}}
+        {{#if city}} | <span>{{city}}</span>{{/if}},
+        {{#if countryCode}}<span>{{countryCode}}</span>{{/if}}
+      {{/location}}
+    </div>
 		{{#if summary}}
 		<div class="summary">
 			<p>{{summary}}</p>
 		</div>
 		{{/if}}
-		{{#location}}
-		<h3>Location</h3>
-		<section id="location">
-			{{#if address}}
-			<div class="address">
-				<strong>Address</strong>
-				{{address}}
-			</div>
-			{{/if}}
-			{{#if postalCode}}
-			<div class="postalCode">
-				<strong>Postal code</strong>
-				{{postalCode}}
-			</div>
-			{{/if}}
-			{{#if city}}
-			<div class="city">
-				<strong>City</strong>
-				{{city}}
-			</div>
-			{{/if}}
-			{{#if countryCode}}
-			<div class="countryCode">
-				<strong>Country code</strong>
-				{{countryCode}}
-			</div>
-			{{/if}}
-			{{#if region}}
-			<div class="region">
-				<strong>Region</strong>
-				{{region}}
-			</div>
-			{{/if}}
-		</section>
-		{{/location}}
 		{{#if profiles.length}}
 		<h3>Profiles</h3>
 		<section id="profiles">
