@@ -28,5 +28,5 @@ node_modules
 .lock-wscript
 
 # User files
-./index.html
-./resume.json
+index.html
+resume.json
