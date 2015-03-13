@@ -29,33 +29,23 @@
       {{/location}}
     </div>
 		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
+      <div class="summary">
+        <p>{{summary}}</p>
+      </div>
 		{{/if}}
 		{{#if profiles.length}}
-		<h3>Profiles</h3>
-		<section id="profiles">
-			{{#each profiles}}
-			<div class="item">
-				{{#if network}}
-				<strong class="network">
-					{{network}}
-				</strong>
-				{{/if}}
-				{{#if username}}
-				<div class="username">
-					{{username}}
-				</div>
-				{{/if}}
-				{{#if url}}
-				<div class="url">
-					<a href="{{url}}">Link</a>
-				</div>
-				{{/if}}
-			</div>
-			{{/each}}
-		</section>
+      <section id="profiles">
+        <div class="">
+          {{#each profiles}}
+            {{#if url}}
+              <span class="url">
+                <a href="{{url}}">{{url}}</a>
+                {{#unless @last}} | {{/unless}}
+              </span>
+            {{/if}}
+        {{/each}}
+        </div>
+      </section>
 		{{/if}}
 	</section>
 	{{/resume.basics}}
