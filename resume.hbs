@@ -17,90 +17,94 @@
 	<div id="resume">
 
 	{{#resume.basics}}
-	<h1>{{name}}</h1>
-	<h2>{{label}}</h2>
-	<section id="basics">
-    <div class=''>
-      {{#if email}}<span>{{email}}</span>{{/if}}
-      {{#if phone}} | <span>{{phone}}</span>{{/if}}
-      {{#location}}
-        {{#if city}} | <span>{{city}}</span>{{/if}},
-        {{#if countryCode}}<span>{{countryCode}}</span>{{/if}}
-      {{/location}}
-    </div>
-		{{#if summary}}
-      <div class="summary">
-        <p>{{summary}}</p>
+    <h1>{{name}}</h1>
+    <h2>{{label}}</h2>
+    <section id="basics">
+      <div class='contactBlock'>
+        {{#if email}}<span class='email'>{{email}}</span>{{/if}}
+        {{#if phone}} | <span class='phone'>{{phone}}</span>{{/if}}
+        {{#location}}
+          {{#if city}} | <span class='city'>{{city}}</span>{{/if}},
+          {{#if countryCode}}<span class='country'>{{countryCode}}</span>{{/if}}
+        {{/location}}
       </div>
-		{{/if}}
-		{{#if profiles.length}}
-      <section id="profiles">
-        <div class="">
-          {{#each profiles}}
-            {{#if url}}
-              <span class="url">
-                <a href="{{url}}">{{url}}</a>
-                {{#unless @last}} | {{/unless}}
-              </span>
-            {{/if}}
-        {{/each}}
-        </div>
-      </section>
-		{{/if}}
-	</section>
+      {{#if profiles.length}}
+        <section id="profiles">
+          <div class="profilesBlock">
+            {{#each profiles}}
+              {{#if url}}
+                <span class="url">
+                  <a href="{{url}}">{{url}}</a>
+                </span>
+                {{#unless @last}}<span>|</span>{{/unless}}
+              {{/if}}
+          {{/each}}
+          </div>
+        </section>
+      {{/if}}
+    </section>
 	{{/resume.basics}}
 
+  {{#if resume.basics.summary}}
+  <section id="summary">
+    <h2>Summary</h2>
+    <div class="summaryBlock">
+      <p>{{resume.basics.summary}}</p>
+    </div>
+  </section>
+  {{/if}}
+
 	{{#if resume.work.length}}
-	<section id="work">
-		<h2>Work</h2>
-		{{#each resume.work}}
-		<div class="item">
-			{{#if company}}
-			<h3 class="name">
-				{{company}}
-			</h3>
-			{{/if}}
-			<div class="date">
-				{{#if startDate}}
-				<span class="startDate">
-					{{startDate}}
-				</span>
-				{{/if}}
-				{{#if endDate}}
-				<span class="endDate">
-					- {{endDate}}
-				</span>
-				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
-				{{/if}}
-			</div>
-			{{#if position}}
-			<div class="position">
-				{{position}}
-			</div>
-			{{/if}}
-			{{#if website}}
-			<div class="website">
-				<a href="{{website}}">{{website}}</a>
-			</div>
-			{{/if}}
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
-			</div>
-			{{/if}}
-			{{#if highlights.length}}
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
+    <section id="work">
+      <h2>Experience</h2>
+      {{#each resume.work}}
+      <div class="item">
+        {{#if company}}
+        <h3 class="name">
+          {{company}}
+        </h3>
+        {{/if}}
+        <div class="date">
+          {{#if startDate}}
+          <span class="startDate">
+            {{startDate}}
+          </span>
+          {{/if}}
+          {{#if endDate}}
+          <span class="endDate">
+            - {{endDate}}
+          </span>
+          {{else}}
+          <span class="endDate">
+            - Present
+          </span>
+          {{/if}}
+        </div>
+        {{#if position}}
+        <div class="position">
+          {{position}}
+        </div>
+        {{/if}}
+        {{#if website}}
+        <div class="website">
+          <a href="{{website}}">{{website}}</a>
+        </div>
+        {{/if}}
+        {{#if summary}}
+        <div class="summary">
+          <p>{{summary}}</p>
+        </div>
+        {{/if}}
+        {{#if highlights.length}}
+        <ul class="highlights">
+          {{#each highlights}}
+          <li>{{.}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </section>
 	{{/if}}
 
 	{{#if resume.volunteer.length}}
