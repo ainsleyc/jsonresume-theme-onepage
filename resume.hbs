@@ -55,46 +55,22 @@
   {{/if}}
 
 	{{#if resume.work.length}}
-    <section id="work">
-      <h2>Experience</h2>
-      {{#each resume.work}}
-      <div class="item">
-        {{#if company}}
-        <h3 class="name">
-          {{company}}
-        </h3>
-        {{/if}}
-        <div class="date">
-          {{#if startDate}}
-          <span class="startDate">
-            {{startDate}}
-          </span>
-          {{/if}}
+  <section id="work">
+    <h2>Experience</h2>
+    <div class="experienceBlock">
+    {{#each resume.work}}
+      <div class="jobBlock">
+        <span class='position'>{{position}},</span>
+        <span class='company'>{{company}}</span>
+        <span class='website'>{{website}}</span>
+        <span class='dateBlock'>
+          <span class="startDate">{{startDate}}</span>
           {{#if endDate}}
-          <span class="endDate">
-            - {{endDate}}
-          </span>
+          <span class="endDate"> - {{endDate}}</span>
           {{else}}
-          <span class="endDate">
-            - Present
-          </span>
+          <span class="endDate"> - Present</span>
           {{/if}}
-        </div>
-        {{#if position}}
-        <div class="position">
-          {{position}}
-        </div>
-        {{/if}}
-        {{#if website}}
-        <div class="website">
-          <a href="{{website}}">{{website}}</a>
-        </div>
-        {{/if}}
-        {{#if summary}}
-        <div class="summary">
-          <p>{{summary}}</p>
-        </div>
-        {{/if}}
+        </span>
         {{#if highlights.length}}
         <ul class="highlights">
           {{#each highlights}}
@@ -103,61 +79,13 @@
         </ul>
         {{/if}}
       </div>
-      {{/each}}
-    </section>
+    {{/each}}
+    </div>
+  </section>
 	{{/if}}
 
+  <!-- TBD -->
 	{{#if resume.volunteer.length}}
-	<section id="volunteer">
-		<h2>Volunteer</h2>
-		{{#each resume.volunteer}}
-		<div class="item">
-			{{#if organization}}
-			<h3 class="company">
-				{{organization}}
-			</h3>
-			{{/if}}
-			<div class="date">
-				{{#if startDate}}
-				<span class="startDate">
-					{{startDate}}
-				</span>
-				{{/if}}
-				{{#if endDate}}
-				<span class="endDate">
-					- {{endDate}}
-				</span>
-				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
-				{{/if}}
-			</div>
-			{{#if position}}
-			<div class="position">
-				{{position}}
-			</div>
-			{{/if}}
-			{{#if website}}
-			<div class="website">
-				<a href="{{website}}">{{website}}</a>
-			</div>
-			{{/if}}
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
-			</div>
-			{{/if}}
-			{{#if highlights.length}}
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
 	{{/if}}
 	
 	{{#if resume.education.length}}
