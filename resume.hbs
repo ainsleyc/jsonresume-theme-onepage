@@ -57,30 +57,28 @@
 	{{#if resume.work.length}}
   <section id="work">
     <h2>Experience</h2>
-    <div class="experienceBlock">
     {{#each resume.work}}
-      <div class="jobBlock">
-        <span class='position'>{{position}},</span>
-        <span class='company'>{{company}}</span>
-        <span class='website'>{{website}}</span>
-        <span class='dateBlock'>
-          <span class="startDate">{{startDate}}</span>
-          {{#if endDate}}
-          <span class="endDate"> - {{endDate}}</span>
-          {{else}}
-          <span class="endDate"> - Present</span>
-          {{/if}}
-        </span>
-        {{#if highlights.length}}
-        <ul class="highlights">
-          {{#each highlights}}
-          <li>{{.}}</li>
-          {{/each}}
-        </ul>
+    <div class="experienceBlock">
+      <span class='position'>{{position}},</span>
+      <span class='company'>{{company}}</span>
+      <span class='website'>{{website}}</span>
+      <span class='dateBlock'>
+        <span class="startDate">{{startDate}}</span>
+        {{#if endDate}}
+        <span class="endDate"> - {{endDate}}</span>
+        {{else}}
+        <span class="endDate"> - Present</span>
         {{/if}}
-      </div>
-    {{/each}}
+      </span>
+      {{#if highlights.length}}
+      <ul class="highlights">
+        {{#each highlights}}
+        <li>{{.}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
     </div>
+    {{/each}}
   </section>
 	{{/if}}
 
@@ -92,49 +90,33 @@
 	<section id="education">
 		<h2>Education</h2>
 		{{#each resume.education}}
-		<div class="item">
-			<div class="date">
-				{{#if startDate}}
-				<span class="startDate">
-					{{startDate}}
-				</span>
-				{{/if}}
+		<div class="educationBlock">
+      <div>
+        <span class="studyType">{{studyType}}</span>
+        <span class="area">{{area}},</span>
+        <span class="institution">{{institution}}</span>
+      </div> 
+      <div>
+				<span class="startDate">{{startDate}}</span>
 				{{#if endDate}}
-				<span class="endDate">
-					- {{endDate}}
-				</span>
+				<span class="endDate">- {{endDate}}</span>
 				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
+				<span class="endDate">- Present</span>
 				{{/if}}
-			</div>
-			{{#if institution}}
-			<div class="institution">
-				{{institution}}
-			</div>
-			{{/if}}
-			{{#if area}}
-			<div class="area">
-				{{area}}
-			</div>
-			{{/if}}
-			{{#if studyType}}
-			<div class="studyType">
-				{{studyType}}
-			</div>
-			{{/if}}
-			{{#if gpa}}
-			<div class="gpa">
-				GPA: {{gpa}}
-			</div>
-			{{/if}}
+        {{#if gpa}}
+        <span class="gpa">, GPA: {{gpa}}</span>
+        {{/if}}
+      </div> 
 			{{#if courses.length}}
-			<ul class="courses">
-				{{#each courses}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
+      <div class='coursesBlock'>
+        {{#each courses}}
+        <ul class="coursesList">
+          {{#each .}}
+          <li class='course'>{{.}}</li>
+          {{/each}}
+        </ul>
+        {{/each}}
+      </div>
 			{{/if}}
 		</div>
 		{{/each}}

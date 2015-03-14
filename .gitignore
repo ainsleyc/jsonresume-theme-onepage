@@ -30,3 +30,6 @@ node_modules
 # User files
 index.html
 resume.json
+
+# Temp files
+*.swp
