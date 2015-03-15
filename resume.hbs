@@ -83,8 +83,8 @@
 	{{/if}}
 
   <!-- TBD -->
-	{{#if resume.volunteer.length}}
-	{{/if}}
+	<!-- {{#if resume.volunteer.length}} -->
+	<!-- {{/if}} -->
 	
 	{{#if resume.education.length}}
 	<section id="education">
@@ -123,90 +123,88 @@
 	</section>
 	{{/if}}
 	
-	{{#if resume.awards.length}}
-	<section id="awards">
-		<h2>Awards</h2>
-		{{#each resume.awards}}
-		<div class="item">
-			{{#if title}}
-			<div class="title">
-				{{title}}
-			</div>
-			{{/if}}
-			{{#if date}}
-			<div class="date">
-				{{date}}
-			</div>
-			{{/if}}
-			{{#if awarder}}
-			<div class="awarder">
-				{{awarder}}
-			</div>
-			{{/if}}
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
-			</div>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
+  <!-- TBD -->
+	<!-- {{#if resume.awards.length}} -->
+	<!-- <section id="awards"> -->
+	<!-- 	<h2>Awards</h2> -->
+	<!-- 	{{#each resume.awards}} -->
+	<!-- 	<div class="item"> -->
+	<!-- 		{{#if title}} -->
+	<!-- 		<div class="title"> -->
+	<!-- 			{{title}} -->
+	<!-- 		</div> -->
+	<!-- 		{{/if}} -->
+	<!-- 		{{#if date}} -->
+	<!-- 		<div class="date"> -->
+	<!-- 			{{date}} -->
+	<!-- 		</div> -->
+	<!-- 		{{/if}} -->
+	<!-- 		{{#if awarder}} -->
+	<!-- 		<div class="awarder"> -->
+	<!-- 			{{awarder}} -->
+	<!-- 		</div> -->
+	<!-- 		{{/if}} -->
+	<!-- 		{{#if summary}} -->
+	<!-- 		<div class="summary"> -->
+	<!-- 			<p>{{summary}}</p> -->
+	<!-- 		</div> -->
+	<!-- 		{{/if}} -->
+	<!-- 	</div> -->
+	<!-- 	{{/each}} -->
+	<!-- </section> -->
+	<!-- {{/if}} -->
 	
-	{{#if resume.publications.length}}
-	<section id="publications">
-		<h2>Publications</h2>
-		{{#each resume.publications}}
-		<div class="item">
-			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
-			{{/if}}
-			{{#if publisher}}
-			<div class="publisher">
-				{{publisher}}
-			</div>
-			{{/if}}
-			{{#if releaseDate}}
-			<div class="releaseDate">
-				{{releaseDate}}
-			</div>
-			{{/if}}
-			{{#if website}}
-			<div class="website">
-				<a href="{{website}}">Link</a>
-			</div>
-			{{/if}}
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
-			</div>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
+  <!-- TBD -->
+	<!-- {{#if resume.publications.length}} -->
+	<!-- <section id="publications"> -->
+		<!-- <h2>Publications</h2> -->
+		<!-- {{#each resume.publications}} -->
+		<!-- <div class="item"> -->
+			<!-- {{#if name}} -->
+			<!-- <div class="name"> -->
+				<!-- {{name}} -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+			<!-- {{#if publisher}} -->
+			<!-- <div class="publisher"> -->
+				<!-- {{publisher}} -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+			<!-- {{#if releaseDate}} -->
+			<!-- <div class="releaseDate"> -->
+				<!-- {{releaseDate}} -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+			<!-- {{#if website}} -->
+			<!-- <div class="website"> -->
+				<!-- <a href="{{website}}">Link</a> -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+			<!-- {{#if summary}} -->
+			<!-- <div class="summary"> -->
+				<!-- <p>{{summary}}</p> -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+		<!-- </div> -->
+		<!-- {{/each}} -->
+	<!-- </section> -->
+	<!-- {{/if}} -->
 	
 	{{#if resume.skills.length}}
 	<section id="skills">
 		<h2>Skills</h2>
 		{{#each resume.skills}}
-		<div class="item">
+		<div class="skillBlock">
 			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
+      <span class="name">{{name}}</span>
 			{{/if}}
 			{{#if level}}
-			<div class="level">
-				<em>{{level}}</em>
-			</div>
+			<span class="level"><em>({{level}})</em></span>
 			{{/if}}
 			{{#if keywords.length}}
-			<ul class="keywords">
+			  <span>:</span>
 				{{#each keywords}}
-				<li>{{.}}</li>
+        <span>{{.}}</span>{{#unless @last}}, {{/unless}}
 				{{/each}}
 			</ul>
 			{{/if}}
@@ -215,69 +213,72 @@
 	</section>
 	{{/if}}
 
-	{{#if resume.languages.length}}
-	<section id="languages">
-		<h2>Languages</h2>
-		{{#each resume.languages}}
-		<div class="item">
-			{{#if language}}
-			<div class="language">
-				{{language}}
-			</div>
-			{{/if}}
-			{{#if fluency}}
-			<div class="fluency">
-				<em>{{fluency}}</em>
-			</div>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
+  <!-- TBD -->
+	<!-- {{#if resume.languages.length}} -->
+	<!-- <section id="languages"> -->
+	<!-- 	<h2>Languages</h2> -->
+	<!-- 	{{#each resume.languages}} -->
+	<!-- 	<div class="item"> -->
+	<!-- 		{{#if language}} -->
+	<!-- 		<div class="language"> -->
+	<!-- 			{{language}} -->
+	<!-- 		</div> -->
+	<!-- 		{{/if}} -->
+	<!-- 		{{#if fluency}} -->
+	<!-- 		<div class="fluency"> -->
+	<!-- 			<em>{{fluency}}</em> -->
+	<!-- 		</div> -->
+	<!-- 		{{/if}} -->
+	<!-- 	</div> -->
+	<!-- 	{{/each}} -->
+	<!-- </section> -->
+	<!-- {{/if}} -->
 
-	{{#if resume.interests.length}}
-	<section id="interests">
-		<h2>Interests</h2>
-		{{#each resume.interests}}
-		<div class="item">
-			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
-			{{/if}}
-			{{#if keywords.length}}
-			<ul class="keywords">
-				{{#each keywords}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
+  <!-- TBD -->
+	<!-- {{#if resume.interests.length}} -->
+	<!-- <section id="interests"> -->
+		<!-- <h2>Interests</h2> -->
+		<!-- {{#each resume.interests}} -->
+		<!-- <div class="item"> -->
+			<!-- {{#if name}} -->
+			<!-- <div class="name"> -->
+				<!-- {{name}} -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+			<!-- {{#if keywords.length}} -->
+			<!-- <ul class="keywords"> -->
+				<!-- {{#each keywords}} -->
+				<!-- <li>{{.}}</li> -->
+				<!-- {{/each}} -->
+			<!-- </ul> -->
+			<!-- {{/if}} -->
+		<!-- </div> -->
+		<!-- {{/each}} -->
+	<!-- </section> -->
+	<!-- {{/if}} -->
 	
-	{{#if resume.references.length}}
-	<section id="references">
-		<h2>References</h2>
-		{{#each resume.references}}
-		<div class="item">
-			{{#if reference}}
-			<blockquote class="reference">
-				{{reference}}
-			</blockquote>
-			{{/if}}
-			{{#if name}}
-			<div class="name">
-				— {{name}}
-			</div>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
+  <!-- TBD -->
+	<!-- {{#if resume.references.length}} -->
+	<!-- <section id="references"> -->
+		<!-- <h2>References</h2> -->
+		<!-- {{#each resume.references}} -->
+		<!-- <div class="item"> -->
+			<!-- {{#if reference}} -->
+			<!-- <blockquote class="reference"> -->
+				<!-- {{reference}} -->
+			<!-- </blockquote> -->
+			<!-- {{/if}} -->
+			<!-- {{#if name}} -->
+			<!-- <div class="name"> -->
+				<!-- — {{name}} -->
+			<!-- </div> -->
+			<!-- {{/if}} -->
+		<!-- </div> -->
+		<!-- {{/each}} -->
+	<!-- </section> -->
+	<!-- {{/if}} -->
 	
-	</div>
+	<!-- </div> -->
 	
 	</body>
 </html>
