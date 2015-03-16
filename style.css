@@ -51,3 +51,12 @@ blockquote {
 	width: 50%;
 }
 
+.coursesBlock {
+
+}
+
+.coursesList {
+  width: 22%;
+  vertical-align: top;
+  display: inline-block;
+}
