@@ -17,57 +17,62 @@
 	<div id="resume">
 
 	{{#resume.basics}}
-    <h1>{{name}}</h1>
-    <h2>{{label}}</h2>
-    <section id="basics">
-      <div class='contactBlock'>
-        {{#if email}}<span class='email'>{{email}}</span>{{/if}}
-        {{#if phone}} | <span class='phone'>{{phone}}</span>{{/if}}
-        {{#location}}
-          {{#if city}} | <span class='city'>{{city}}</span>{{/if}},
-          {{#if countryCode}}<span class='country'>{{countryCode}}</span>{{/if}}
-        {{/location}}
+  <div id='nameBlock' class='largeFont'>
+    <span id='name'>{{name}}{{#if label}},{{/if}}</span>
+    {{#if label}}
+    <span id='label'>{{label}}</span>
+    {{/if}}
+  </div>
+  <div id="basicsBlock" class='smallFont'>
+    <div id='contactBlock'>
+      {{#if email}}<span id='email'>{{email}}</span>{{/if}}
+      {{#if phone}} | <span id='phone'>{{phone}}</span>{{/if}}
+      {{#location}}
+        {{#if city}} | <span id='city'>{{city}}</span>{{/if}},
+        {{#if countryCode}}<span id='country'>{{countryCode}}</span>{{/if}}
+      {{/location}}
+    </div>
+    {{#if profiles.length}}
+      <div id="profilesBlock">
+        {{#each profiles}}
+          {{#if url}}
+            <span class="url">
+              <a href="{{url}}">{{url}}</a>
+            </span>
+            {{#unless @last}}<span>|</span>{{/unless}}
+          {{/if}}
+      {{/each}}
       </div>
-      {{#if profiles.length}}
-        <section id="profiles">
-          <div class="profilesBlock">
-            {{#each profiles}}
-              {{#if url}}
-                <span class="url">
-                  <a href="{{url}}">{{url}}</a>
-                </span>
-                {{#unless @last}}<span>|</span>{{/unless}}
-              {{/if}}
-          {{/each}}
-          </div>
-        </section>
-      {{/if}}
-    </section>
+    {{/if}}
+  </div>
+  <div class='thickLine'></div>
 	{{/resume.basics}}
 
+
   {{#if resume.basics.summary}}
-  <section id="summary">
+  <div id="summary">
     <h2>Summary</h2>
     <div class="summaryBlock">
       <p>{{resume.basics.summary}}</p>
     </div>
-  </section>
+  </div>
+  <div class='thinLine'></div>
   {{/if}}
 
 	{{#if resume.work.length}}
-  <section id="work">
+  <div id="work">
     <h2>Experience</h2>
     {{#each resume.work}}
-    <div class="experienceBlock">
-      <span class='position'>{{position}},</span>
-      <span class='company'>{{company}}</span>
-      <span class='website'>{{website}}</span>
-      <span class='dateBlock'>
+    <div id="experienceBlock">
+      <span id='position'>{{position}},</span>
+      <span id='company'>{{company}}</span>
+      <span id='website'>({{website}})</span>
+      <span id='dateBlock'>
         <span class="startDate">{{startDate}}</span>
         {{#if endDate}}
-        <span class="endDate"> - {{endDate}}</span>
+        <span class="endDate">- {{endDate}}</span>
         {{else}}
-        <span class="endDate"> - Present</span>
+        <span class="endDate">- Present</span>
         {{/if}}
       </span>
       {{#if highlights.length}}
@@ -79,7 +84,8 @@
       {{/if}}
     </div>
     {{/each}}
-  </section>
+  </div>
+  <div class='thinLine'></div>
 	{{/if}}
 
   <!-- TBD -->
@@ -87,7 +93,7 @@
 	<!-- {{/if}} -->
 	
 	{{#if resume.education.length}}
-	<section id="education">
+	<div id="education">
 		<h2>Education</h2>
 		{{#each resume.education}}
 		<div class="educationBlock">
@@ -120,7 +126,8 @@
 			{{/if}}
 		</div>
 		{{/each}}
-	</section>
+	</div>
+  <div class='thinLine'></div>
 	{{/if}}
 	
   <!-- TBD -->

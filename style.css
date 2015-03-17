@@ -60,3 +60,39 @@ blockquote {
   vertical-align: top;
   display: inline-block;
 }
+
+#nameBlock {
+}
+
+#basicsBlock {
+}
+
+#name {
+}
+
+#label {
+}
+
+.thickLine {
+  border-style: solid;
+  border-top: thick;
+  margin-top: 12px;
+}
+
+.thinLine {
+  border-style: solid;
+  border-top: thick;
+  margin-top: 12px;
+}
+
+.largeFont {
+  font-size: 20px;
+}
+
+.smallFont {
+  font-size: 12px;
+}
+
+#dateBlock {
+  float: right;
+}
