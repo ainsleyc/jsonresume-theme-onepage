@@ -96,3 +96,15 @@ blockquote {
 #dateBlock {
   float: right;
 }
+
+.sectionName {
+  width: 20%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.sectionContent {
+  width: 75%;
+  vertical-align: top;
+  display: inline-block
+}

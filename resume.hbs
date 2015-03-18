@@ -48,11 +48,12 @@
   <div class='thickLine'></div>
 	{{/resume.basics}}
 
-
   {{#if resume.basics.summary}}
   <div id="summary">
-    <h2>Summary</h2>
-    <div class="summaryBlock">
+    <div class='sectionName'>
+      <p>Summary</p>
+    </div>
+    <div class="sectionContent">
       <p>{{resume.basics.summary}}</p>
     </div>
   </div>
@@ -61,29 +62,33 @@
 
 	{{#if resume.work.length}}
   <div id="work">
-    <h2>Experience</h2>
-    {{#each resume.work}}
-    <div id="experienceBlock">
-      <span id='position'>{{position}},</span>
-      <span id='company'>{{company}}</span>
-      <span id='website'>({{website}})</span>
-      <span id='dateBlock'>
-        <span class="startDate">{{startDate}}</span>
-        {{#if endDate}}
-        <span class="endDate">- {{endDate}}</span>
-        {{else}}
-        <span class="endDate">- Present</span>
-        {{/if}}
-      </span>
-      {{#if highlights.length}}
-      <ul class="highlights">
-        {{#each highlights}}
-        <li>{{.}}</li>
-        {{/each}}
-      </ul>
-      {{/if}}
+    <div class='sectionName'>
+      <p>Experience</p>
     </div>
-    {{/each}}
+    <div class="sectionContent">
+      {{#each resume.work}}
+      <div id="experienceBlock">
+        <span id='position'>{{position}},</span>
+        <span id='company'>{{company}}</span>
+        <span id='website'>({{website}})</span>
+        <span id='dateBlock'>
+          <span class="startDate">{{startDate}}</span>
+          {{#if endDate}}
+          <span class="endDate">- {{endDate}}</span>
+          {{else}}
+          <span class="endDate">- Present</span>
+          {{/if}}
+        </span>
+        {{#if highlights.length}}
+        <ul class="highlights">
+          {{#each highlights}}
+          <li>{{.}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
   </div>
   <div class='thinLine'></div>
 	{{/if}}
@@ -94,38 +99,42 @@
 	
 	{{#if resume.education.length}}
 	<div id="education">
-		<h2>Education</h2>
-		{{#each resume.education}}
-		<div class="educationBlock">
-      <div>
-        <span class="studyType">{{studyType}}</span>
-        <span class="area">{{area}},</span>
-        <span class="institution">{{institution}}</span>
-      </div> 
-      <div>
-				<span class="startDate">{{startDate}}</span>
-				{{#if endDate}}
-				<span class="endDate">- {{endDate}}</span>
-				{{else}}
-				<span class="endDate">- Present</span>
-				{{/if}}
-        {{#if gpa}}
-        <span class="gpa">, GPA: {{gpa}}</span>
-        {{/if}}
-      </div> 
-			{{#if courses.length}}
-      <div class='coursesBlock'>
-        {{#each courses}}
-        <ul class="coursesList">
-          {{#each .}}
-          <li class='course'>{{.}}</li>
+    <div class='sectionName'>
+      <p>Education</p>
+    </div>
+    <div class="sectionContent">
+      {{#each resume.education}}
+      <div class="educationBlock">
+        <div>
+          <span class="studyType">{{studyType}}</span>
+          <span class="area">{{area}},</span>
+          <span class="institution">{{institution}}</span>
+        </div> 
+        <div>
+          <span class="startDate">{{startDate}}</span>
+          {{#if endDate}}
+          <span class="endDate">- {{endDate}}</span>
+          {{else}}
+          <span class="endDate">- Present</span>
+          {{/if}}
+          {{#if gpa}}
+          <span class="gpa">, GPA: {{gpa}}</span>
+          {{/if}}
+        </div> 
+        {{#if courses.length}}
+        <div class='coursesBlock'>
+          {{#each courses}}
+          <ul class="coursesList">
+            {{#each .}}
+            <li class='course'>{{.}}</li>
+            {{/each}}
+          </ul>
           {{/each}}
-        </ul>
-        {{/each}}
+        </div>
+        {{/if}}
       </div>
-			{{/if}}
-		</div>
-		{{/each}}
+      {{/each}}
+    </div>
 	</div>
   <div class='thinLine'></div>
 	{{/if}}
@@ -198,26 +207,30 @@
 	<!-- {{/if}} -->
 	
 	{{#if resume.skills.length}}
-	<section id="skills">
-		<h2>Skills</h2>
-		{{#each resume.skills}}
-		<div class="skillBlock">
-			{{#if name}}
-      <span class="name">{{name}}</span>
-			{{/if}}
-			{{#if level}}
-			<span class="level"><em>({{level}})</em></span>
-			{{/if}}
-			{{#if keywords.length}}
-			  <span>:</span>
-				{{#each keywords}}
-        <span>{{.}}</span>{{#unless @last}}, {{/unless}}
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
+	<div id="skills">
+    <div class='sectionName'>
+      <p>Skills</p>
+    </div>
+    <div class="sectionContent">
+      {{#each resume.skills}}
+      <div class="skillBlock">
+        {{#if name}}
+        <span class="name">{{name}}</span>
+        {{/if}}
+        {{#if level}}
+        <span class="level"><em>({{level}})</em></span>
+        {{/if}}
+        {{#if keywords.length}}
+          <span>:</span>
+          {{#each keywords}}
+          <span>{{.}}</span>{{#unless @last}}, {{/unless}}
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+	</div>
 	{{/if}}
 
   <!-- TBD -->
