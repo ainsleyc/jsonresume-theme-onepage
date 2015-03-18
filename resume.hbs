@@ -45,25 +45,25 @@
       </div>
     {{/if}}
   </div>
-  <div class='thickLine'></div>
+  <div class='sectionLine'></div>
 	{{/resume.basics}}
 
   {{#if resume.basics.summary}}
   <div id="summary">
     <div class='sectionName'>
-      <p>Summary</p>
+      <span>SUMMARY</span>
     </div>
     <div class="sectionContent">
-      <p>{{resume.basics.summary}}</p>
+      <span>{{resume.basics.summary}}</span>
     </div>
   </div>
-  <div class='thinLine'></div>
+  <div class='sectionLine'></div>
   {{/if}}
 
 	{{#if resume.work.length}}
   <div id="work">
     <div class='sectionName'>
-      <p>Experience</p>
+      <span>EXPERIENCE</span>
     </div>
     <div class="sectionContent">
       {{#each resume.work}}
@@ -90,7 +90,7 @@
       {{/each}}
     </div>
   </div>
-  <div class='thinLine'></div>
+  <div class='sectionLine'></div>
 	{{/if}}
 
   <!-- TBD -->
@@ -100,7 +100,7 @@
 	{{#if resume.education.length}}
 	<div id="education">
     <div class='sectionName'>
-      <p>Education</p>
+      <span>EDUCATION</span>
     </div>
     <div class="sectionContent">
       {{#each resume.education}}
@@ -136,7 +136,7 @@
       {{/each}}
     </div>
 	</div>
-  <div class='thinLine'></div>
+  <div class='sectionLine'></div>
 	{{/if}}
 	
   <!-- TBD -->
@@ -209,7 +209,7 @@
 	{{#if resume.skills.length}}
 	<div id="skills">
     <div class='sectionName'>
-      <p>Skills</p>
+      <span>SKILLS</span>
     </div>
     <div class="sectionContent">
       {{#each resume.skills}}

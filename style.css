@@ -108,3 +108,11 @@ blockquote {
   vertical-align: top;
   display: inline-block
 }
+
+.sectionLine {
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #CFCFCF;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
