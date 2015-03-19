@@ -93,6 +93,33 @@
   <div class='sectionLine'></div>
 	{{/if}}
 
+	{{#if resume.awards.length}}
+	<div id="awards">
+    <div class='sectionName'>
+      <span>AWARDS</span>
+    </div>
+    <div class="sectionContent">
+      {{#each resume.awards}}
+      <div class="awardsBlock">
+        {{#if title}}
+        <span class="title">{{title}},</span>
+        {{/if}}
+        {{#if awarder}}
+        <span class="awarder">{{awarder}}</span>
+        {{/if}}
+        {{#if date}}
+        <span id='dateBlock'>
+          <span class="date">{{date}}</span>
+        </span>
+        {{/if}}
+      </div>
+      <div class="summary">{{summary}}</div>
+      {{/each}}
+    </div>
+	</div>
+  <div class='sectionLine'></div>
+	{{/if}}
+	
 	{{#if resume.volunteer.length}}
 	<div id="volunteer">
     <div class='sectionName'>
@@ -118,6 +145,7 @@
           <span class="endDate">- Present</span>
           {{/if}}
         </span>
+        <div class="summary">{{summary}}</div>
         {{#if highlights.length}}
         <ul class="highlights">
           {{#each highlights}}
@@ -173,37 +201,6 @@
 	</div>
   <div class='sectionLine'></div>
 	{{/if}}
-	
-  <!-- TBD -->
-	<!-- {{#if resume.awards.length}} -->
-	<!-- <section id="awards"> -->
-	<!-- 	<h2>Awards</h2> -->
-	<!-- 	{{#each resume.awards}} -->
-	<!-- 	<div class="item"> -->
-	<!-- 		{{#if title}} -->
-	<!-- 		<div class="title"> -->
-	<!-- 			{{title}} -->
-	<!-- 		</div> -->
-	<!-- 		{{/if}} -->
-	<!-- 		{{#if date}} -->
-	<!-- 		<div class="date"> -->
-	<!-- 			{{date}} -->
-	<!-- 		</div> -->
-	<!-- 		{{/if}} -->
-	<!-- 		{{#if awarder}} -->
-	<!-- 		<div class="awarder"> -->
-	<!-- 			{{awarder}} -->
-	<!-- 		</div> -->
-	<!-- 		{{/if}} -->
-	<!-- 		{{#if summary}} -->
-	<!-- 		<div class="summary"> -->
-	<!-- 			<p>{{summary}}</p> -->
-	<!-- 		</div> -->
-	<!-- 		{{/if}} -->
-	<!-- 	</div> -->
-	<!-- 	{{/each}} -->
-	<!-- </section> -->
-	<!-- {{/if}} -->
 	
   <!-- TBD -->
 	<!-- {{#if resume.publications.length}} -->
