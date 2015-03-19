@@ -93,9 +93,44 @@
   <div class='sectionLine'></div>
 	{{/if}}
 
-  <!-- TBD -->
-	<!-- {{#if resume.volunteer.length}} -->
-	<!-- {{/if}} -->
+	{{#if resume.volunteer.length}}
+	<div id="volunteer">
+    <div class='sectionName'>
+      <span>VOLUNTEERING</span>
+    </div>
+    <div class="sectionContent">
+      {{#each resume.volunteer}}
+      <div class="volunteerBlock">
+        {{#if position}}
+        <span class="position">{{position}},</span>
+        {{/if}}
+        {{#if organization}}
+        <span class="organization">{{organization}}</span>
+        {{/if}}
+        {{#if website}}
+        <span class="website">({{website}})</span>
+        {{/if}}
+        <span id='dateBlock'>
+          <span class="startDate">{{startDate}}</span>
+          {{#if endDate}}
+          <span class="endDate">- {{endDate}}</span>
+          {{else}}
+          <span class="endDate">- Present</span>
+          {{/if}}
+        </span>
+        {{#if highlights.length}}
+        <ul class="highlights">
+          {{#each highlights}}
+          <li>{{.}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+	</div>
+  <div class='sectionLine'></div>
+	{{/if}}
 	
 	{{#if resume.education.length}}
 	<div id="education">
