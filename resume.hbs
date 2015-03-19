@@ -93,6 +93,33 @@
   <div class='sectionLine'></div>
 	{{/if}}
 
+	{{#if resume.publications.length}}
+	<div id="publications">
+    <div class='sectionName'>
+      <span>PUBLICATIONS</span>
+    </div>
+    <div class="sectionContent">
+      {{#each resume.publications}}
+      <div class="publicationsBlock">
+        {{#if name}}
+        <span class="name">{{name}},</span>
+        {{/if}}
+        {{#if website}}
+        <span class="website">({{website}})</span>
+        {{/if}}
+        {{#if releaseDate}}
+        <span id='dateBlock'>
+          <span class="releaseDate">{{releaseDate}}</span>
+        </span>
+        {{/if}}
+      </div>
+      <div class="summary">{{summary}}</div>
+      {{/each}}
+    </div>
+	</div>
+  <div class='sectionLine'></div>
+	{{/if}}
+
 	{{#if resume.awards.length}}
 	<div id="awards">
     <div class='sectionName'>
@@ -201,42 +228,6 @@
 	</div>
   <div class='sectionLine'></div>
 	{{/if}}
-	
-  <!-- TBD -->
-	<!-- {{#if resume.publications.length}} -->
-	<!-- <section id="publications"> -->
-		<!-- <h2>Publications</h2> -->
-		<!-- {{#each resume.publications}} -->
-		<!-- <div class="item"> -->
-			<!-- {{#if name}} -->
-			<!-- <div class="name"> -->
-				<!-- {{name}} -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-			<!-- {{#if publisher}} -->
-			<!-- <div class="publisher"> -->
-				<!-- {{publisher}} -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-			<!-- {{#if releaseDate}} -->
-			<!-- <div class="releaseDate"> -->
-				<!-- {{releaseDate}} -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-			<!-- {{#if website}} -->
-			<!-- <div class="website"> -->
-				<!-- <a href="{{website}}">Link</a> -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-			<!-- {{#if summary}} -->
-			<!-- <div class="summary"> -->
-				<!-- <p>{{summary}}</p> -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-		<!-- </div> -->
-		<!-- {{/each}} -->
-	<!-- </section> -->
-	<!-- {{/if}} -->
 	
 	{{#if resume.skills.length}}
 	<div id="skills">
