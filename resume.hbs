@@ -275,51 +275,28 @@
 	</div>
   {{/if}}
 
-  <!-- TBD -->
-	<!-- {{#if resume.interests.length}} -->
-	<!-- <section id="interests"> -->
-		<!-- <h2>Interests</h2> -->
-		<!-- {{#each resume.interests}} -->
-		<!-- <div class="item"> -->
-			<!-- {{#if name}} -->
-			<!-- <div class="name"> -->
-				<!-- {{name}} -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-			<!-- {{#if keywords.length}} -->
-			<!-- <ul class="keywords"> -->
-				<!-- {{#each keywords}} -->
-				<!-- <li>{{.}}</li> -->
-				<!-- {{/each}} -->
-			<!-- </ul> -->
-			<!-- {{/if}} -->
-		<!-- </div> -->
-		<!-- {{/each}} -->
-	<!-- </section> -->
-	<!-- {{/if}} -->
-	
-  <!-- TBD -->
-	<!-- {{#if resume.references.length}} -->
-	<!-- <section id="references"> -->
-		<!-- <h2>References</h2> -->
-		<!-- {{#each resume.references}} -->
-		<!-- <div class="item"> -->
-			<!-- {{#if reference}} -->
-			<!-- <blockquote class="reference"> -->
-				<!-- {{reference}} -->
-			<!-- </blockquote> -->
-			<!-- {{/if}} -->
-			<!-- {{#if name}} -->
-			<!-- <div class="name"> -->
-				<!-- — {{name}} -->
-			<!-- </div> -->
-			<!-- {{/if}} -->
-		<!-- </div> -->
-		<!-- {{/each}} -->
-	<!-- </section> -->
-	<!-- {{/if}} -->
-	
-	<!-- </div> -->
+	{{#if resume.interests.length}}
+	<div id="interests">
+    <div class='sectionName'>
+      <span>INTERESTS</span>
+    </div>
+    <div class="sectionContent">
+      {{#each resume.interests}}
+      <span class="name">{{name}}</span>
+      {{#if keywords.length}}
+      <span class="keywords"><em>[
+      {{#each keywords}} 
+        {{.}}
+        {{#unless @last}}, {{/unless}}
+      {{/each}}
+      ]</em></span>
+      {{/if}}
+      {{#unless @last}}<span>,</span>{{/unless}}
+      {{/each}}
+    </div>
+    <div class='sectionLine'></div>
+	</div>
+  {{/if}}
 	
 	</body>
 </html>
