@@ -18,18 +18,32 @@
 
 	{{#resume.basics}}
   <div id='nameBlock' class='largeFont'>
-    <span id='name'>{{name}}{{#if label}},{{/if}}</span>
+    <span class='name'>
+      {{name}}{{#if label}},{{/if}}
+    </span>
     {{#if label}}
-    <span id='label'>{{label}}</span>
+    <span class='label'>{{label}}</span>
     {{/if}}
   </div>
   <div id="basicsBlock" class='smallFont'>
     <div id='contactBlock'>
-      {{#if email}}<span id='email'>{{email}}</span>{{/if}}
-      {{#if phone}} | <span id='phone'>{{phone}}</span>{{/if}}
+      {{#if email}}
+      <span class='email'>{{email}}</span>
+      {{/if}}
+      {{#if phone}}
+      <span class='divider'>|</span>
+      <span class='phone'>{{phone}}</span>
+      {{/if}}
       {{#location}}
-        {{#if city}} | <span id='city'>{{city}}</span>{{/if}},
-        {{#if countryCode}}<span id='country'>{{countryCode}}</span>{{/if}}
+        {{#if city}}
+        <span class='divider'>|</span>
+        <span class='city'>
+          {{city}}{{#if countryCode}},{{/if}}
+        </span>
+        {{/if}}
+        {{#if countryCode}}
+        <span class='country'>{{countryCode}}</span>
+        {{/if}}
       {{/location}}
     </div>
     {{#if profiles.length}}
@@ -39,7 +53,7 @@
             <span class="url">
               <a href="{{url}}">{{url}}</a>
             </span>
-            {{#unless @last}}<span>|</span>{{/unless}}
+            {{#unless @last}}<span class='divider'>|</span>{{/unless}}
           {{/if}}
       {{/each}}
       </div>
