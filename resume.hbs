@@ -63,7 +63,7 @@
 	{{/resume.basics}}
 
   {{#if resume.basics.summary}}
-  <div id="summary">
+  <div id="summaryBlock">
     <div class='sectionName'>
       <span>SUMMARY</span>
     </div>
@@ -75,23 +75,18 @@
   {{/if}}
 
 	{{#if resume.work.length}}
-  <div id="work">
+  <div id="workBlock">
     <div class='sectionName'>
       <span>EXPERIENCE</span>
     </div>
     <div class="sectionContent">
       {{#each resume.work}}
       <div id="experienceBlock">
-        <span id='position'>{{position}},</span>
-        <span id='company'>{{company}}</span>
-        <span id='website'>({{website}})</span>
-        <span id='dateBlock'>
-          <span class="startDate">{{startDate}}</span>
-          {{#if endDate}}
-          <span class="endDate">- {{endDate}}</span>
-          {{else}}
-          <span class="endDate">- Present</span>
-          {{/if}}
+        <span class='position'>{{position}},</span>
+        <span class='company'>{{company}}</span>
+        <span class='website'>(<a href='{{website}}'>{{website}}</a>)</span>
+        <span class='dateBlock'>
+          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}Present{{/if}}
         </span>
         {{#if highlights.length}}
         <ul class="highlights">
@@ -101,6 +96,7 @@
         </ul>
         {{/if}}
       </div>
+      {{#unless @last}}<div class='blockSeparator'></div>{{/unless}}
       {{/each}}
     </div>
   </div>
@@ -122,7 +118,7 @@
         <span class="website">({{website}})</span>
         {{/if}}
         {{#if releaseDate}}
-        <span id='dateBlock'>
+        <span class='dateBlock'>
           <span class="releaseDate">{{releaseDate}}</span>
         </span>
         {{/if}}
@@ -149,7 +145,7 @@
         <span class="awarder">{{awarder}}</span>
         {{/if}}
         {{#if date}}
-        <span id='dateBlock'>
+        <span class='dateBlock'>
           <span class="date">{{date}}</span>
         </span>
         {{/if}}
@@ -178,7 +174,7 @@
         {{#if website}}
         <span class="website">({{website}})</span>
         {{/if}}
-        <span id='dateBlock'>
+        <span class='dateBlock'>
           <span class="startDate">{{startDate}}</span>
           {{#if endDate}}
           <span class="endDate">- {{endDate}}</span>
