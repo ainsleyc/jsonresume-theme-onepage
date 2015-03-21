@@ -81,10 +81,6 @@ blockquote {
   font-size: 12px;
 }
 
-.dateBlock {
-  float: right;
-}
-
 .sectionName {
   width: 18%;
   vertical-align: top;
@@ -102,6 +98,18 @@ blockquote {
   margin-top: 6px;
 }
 
+.sectionContent .title {
+  font-weight: bold;
+}
+
+.sectionContent .date {
+  float: right;
+}
+
+.sectionContent .separator {
+  height: 14px;
+}
+
 .sectionLine {
   border-style: dashed;
   border-width: 1px;
@@ -110,16 +118,13 @@ blockquote {
   margin-bottom: 10px;
 }
 
-.blockSeparator {
-  height: 14px;
-}
-
 .divider {
   font-weight: bold;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-#experienceBlock .position, .company {
-  font-weight: bold;
+.summary {
+  margin-top: 6px;
 }
+

@@ -2,8 +2,8 @@
 <html>
 	<head>
 	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, user-scalable=no, minimal-ui'>
 	
 	<title>{{resume.basics.name}}</title>
 
@@ -14,7 +14,7 @@
 	</head>
 	<body>
 	
-	<div id="resume">
+	<div id='resume'>
 
 	{{#resume.basics}}
   <div id='nameBlock' class='largeFont'>
@@ -25,7 +25,7 @@
     <span class='label'>{{label}}</span>
     {{/if}}
   </div>
-  <div id="basicsBlock" class='smallFont'>
+  <div id='basicsBlock' class='smallFont'>
     <div id='contactBlock'>
       {{#if email}}
       <span class='email'>{{email}}</span>
@@ -47,11 +47,11 @@
       {{/location}}
     </div>
     {{#if profiles.length}}
-      <div id="profilesBlock">
+      <div id='profilesBlock'>
         {{#each profiles}}
           {{#if url}}
-            <span class="url">
-              <a href="{{url}}">{{url}}</a>
+            <span class='url'>
+              <a href='{{url}}'>{{url}}</a>
             </span>
             {{#unless @last}}<span class='divider'>|</span>{{/unless}}
           {{/if}}
@@ -63,11 +63,11 @@
 	{{/resume.basics}}
 
   {{#if resume.basics.summary}}
-  <div id="summaryBlock">
+  <div id='summaryBlock'>
     <div class='sectionName'>
       <span>SUMMARY</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       <span>{{resume.basics.summary}}</span>
     </div>
   </div>
@@ -75,28 +75,32 @@
   {{/if}}
 
 	{{#if resume.work.length}}
-  <div id="workBlock">
+  <div id='workBlock'>
     <div class='sectionName'>
       <span>EXPERIENCE</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.work}}
-      <div id="experienceBlock">
-        <span class='position'>{{position}},</span>
-        <span class='company'>{{company}}</span>
-        <span class='website'>(<a href='{{website}}'>{{website}}</a>)</span>
-        <span class='dateBlock'>
+      <div class='blockHeader'>
+        <span class='title'>
+          {{#if company}}{{company}}{{/if}}{{#if position}}, {{position}}{{/if}}
+        </span>
+        {{#if startDate}}
+        <span class='date'>
           {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}Present{{/if}}
         </span>
-        {{#if highlights.length}}
-        <ul class="highlights">
-          {{#each highlights}}
-          <li>{{.}}</li>
-          {{/each}}
-        </ul>
         {{/if}}
       </div>
-      {{#unless @last}}<div class='blockSeparator'></div>{{/unless}}
+      <div><a href='{{website}}'>{{website}}</a></div>
+      {{#if highlights.length}}
+      <ul class='highlights'>
+        <li>{{summary}}</li>
+        {{#each highlights}}
+        <li>{{.}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+      {{#unless @last}}<div class='separator'></div>{{/unless}}
       {{/each}}
     </div>
   </div>
@@ -104,26 +108,32 @@
 	{{/if}}
 
 	{{#if resume.publications.length}}
-	<div id="publications">
+	<div id='publications'>
     <div class='sectionName'>
       <span>PUBLICATIONS</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.publications}}
-      <div class="publicationsBlock">
-        {{#if name}}
-        <span class="name">{{name}},</span>
-        {{/if}}
-        {{#if website}}
-        <span class="website">({{website}})</span>
-        {{/if}}
+      <div class='blockHeader'>
+        <span class='title'>
+          {{#if name}}{{name}}{{/if}}{{#if publisher}}, {{publisher}}{{/if}}
+        </span>
         {{#if releaseDate}}
-        <span class='dateBlock'>
-          <span class="releaseDate">{{releaseDate}}</span>
+        <span class='date'>
+          <span class='releaseDate'>{{releaseDate}}</span>
         </span>
         {{/if}}
       </div>
-      <div class="summary">{{summary}}</div>
+      {{#if website}}
+      <div class='website'>
+        <a href='{{website}}'>{{website}}</a>
+      </div>
+      {{/if}}
+      {{#if summary}}
+      <ul class='highlights'>
+        <li>{{summary}}</li>
+      </ul>
+      {{/if}}
       {{/each}}
     </div>
 	</div>
@@ -131,26 +141,26 @@
 	{{/if}}
 
 	{{#if resume.awards.length}}
-	<div id="awards">
+	<div id='awards'>
     <div class='sectionName'>
       <span>AWARDS</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.awards}}
-      <div class="awardsBlock">
+      <div class='awardsBlock'>
         {{#if title}}
-        <span class="title">{{title}},</span>
+        <span class='title'>{{title}},</span>
         {{/if}}
         {{#if awarder}}
-        <span class="awarder">{{awarder}}</span>
+        <span class='awarder'>{{awarder}}</span>
         {{/if}}
         {{#if date}}
-        <span class='dateBlock'>
-          <span class="date">{{date}}</span>
+        <span class='date'>
+          <span class='date'>{{date}}</span>
         </span>
         {{/if}}
       </div>
-      <div class="summary">{{summary}}</div>
+      <div class='summary'>{{summary}}</div>
       {{/each}}
     </div>
 	</div>
@@ -158,33 +168,33 @@
 	{{/if}}
 	
 	{{#if resume.volunteer.length}}
-	<div id="volunteer">
+	<div id='volunteer'>
     <div class='sectionName'>
       <span>VOLUNTEERING</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.volunteer}}
-      <div class="volunteerBlock">
+      <div class='volunteerBlock'>
         {{#if position}}
-        <span class="position">{{position}},</span>
+        <span class='position'>{{position}},</span>
         {{/if}}
         {{#if organization}}
-        <span class="organization">{{organization}}</span>
+        <span class='organization'>{{organization}}</span>
         {{/if}}
         {{#if website}}
-        <span class="website">({{website}})</span>
+        <span class='website'>({{website}})</span>
         {{/if}}
-        <span class='dateBlock'>
-          <span class="startDate">{{startDate}}</span>
+        <span class='date'>
+          <span class='startDate'>{{startDate}}</span>
           {{#if endDate}}
-          <span class="endDate">- {{endDate}}</span>
+          <span class='endDate'>- {{endDate}}</span>
           {{else}}
-          <span class="endDate">- Present</span>
+          <span class='endDate'>- Present</span>
           {{/if}}
         </span>
-        <div class="summary">{{summary}}</div>
+        <div class='summary'>{{summary}}</div>
         {{#if highlights.length}}
-        <ul class="highlights">
+        <ul class='highlights'>
           {{#each highlights}}
           <li>{{.}}</li>
           {{/each}}
@@ -198,33 +208,33 @@
 	{{/if}}
 	
 	{{#if resume.education.length}}
-	<div id="education">
+	<div id='education'>
     <div class='sectionName'>
       <span>EDUCATION</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.education}}
-      <div class="educationBlock">
+      <div class='educationBlock'>
         <div>
-          <span class="studyType">{{studyType}}</span>
-          <span class="area">{{area}},</span>
-          <span class="institution">{{institution}}</span>
+          <span class='studyType'>{{studyType}}</span>
+          <span class='area'>{{area}},</span>
+          <span class='institution'>{{institution}}</span>
         </div> 
         <div>
-          <span class="startDate">{{startDate}}</span>
+          <span class='startDate'>{{startDate}}</span>
           {{#if endDate}}
-          <span class="endDate">- {{endDate}}</span>
+          <span class='endDate'>- {{endDate}}</span>
           {{else}}
-          <span class="endDate">- Present</span>
+          <span class='endDate'>- Present</span>
           {{/if}}
           {{#if gpa}}
-          <span class="gpa">, GPA: {{gpa}}</span>
+          <span class='gpa'>, GPA: {{gpa}}</span>
           {{/if}}
         </div> 
         {{#if courses.length}}
         <div class='coursesBlock'>
           {{#each courses}}
-          <ul class="coursesList">
+          <ul class='coursesList'>
             {{#each .}}
             <li class='course'>{{.}}</li>
             {{/each}}
@@ -240,18 +250,18 @@
 	{{/if}}
 	
 	{{#if resume.skills.length}}
-	<div id="skills">
+	<div id='skills'>
     <div class='sectionName'>
       <span>SKILLS</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.skills}}
-      <div class="skillBlock">
+      <div class='skillBlock'>
         {{#if name}}
-        <span class="name">{{name}}</span>
+        <span class='name'>{{name}}</span>
         {{/if}}
         {{#if level}}
-        <span class="level"><em>({{level}})</em></span>
+        <span class='level'><em>({{level}})</em></span>
         {{/if}}
         {{#if keywords.length}}
           <span>:</span>
@@ -268,15 +278,15 @@
 	{{/if}}
 
 	{{#if resume.languages.length}}
-	<div id="languages">
+	<div id='languages'>
     <div class='sectionName'>
       <span>LANGUAGES</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.languages}}
-      <span class="language">{{language}}</span>
+      <span class='language'>{{language}}</span>
       {{#if fluency}}
-      <span class="fluency"><em>({{fluency}})</em></span>
+      <span class='fluency'><em>({{fluency}})</em></span>
       {{/if}}
       {{#unless @last}}<span>,</span>{{/unless}}
       {{/each}}
@@ -286,15 +296,15 @@
   {{/if}}
 
 	{{#if resume.interests.length}}
-	<div id="interests">
+	<div id='interests'>
     <div class='sectionName'>
       <span>INTERESTS</span>
     </div>
-    <div class="sectionContent">
+    <div class='sectionContent'>
       {{#each resume.interests}}
-      <span class="name">{{name}}</span>
+      <span class='name'>{{name}}</span>
       {{#if keywords.length}}
-      <span class="keywords"><em>[
+      <span class='keywords'><em>[
       {{#each keywords}} 
         {{.}}
         {{#unless @last}}, {{/unless}}
