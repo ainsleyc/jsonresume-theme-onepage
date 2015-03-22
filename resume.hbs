@@ -147,20 +147,21 @@
     </div>
     <div class='sectionContent'>
       {{#each resume.awards}}
-      <div class='awardsBlock'>
-        {{#if title}}
-        <span class='title'>{{title}},</span>
-        {{/if}}
-        {{#if awarder}}
-        <span class='awarder'>{{awarder}}</span>
-        {{/if}}
+      <div class='blockHeader'>
+        <span class='title'>
+          {{#if title}}{{title}}{{/if}}{{#if awarder}}, {{awarder}}{{/if}}
+        </span>
         {{#if date}}
         <span class='date'>
           <span class='date'>{{date}}</span>
         </span>
         {{/if}}
       </div>
-      <div class='summary'>{{summary}}</div>
+      {{#if summary}}
+      <ul class='highlights'>
+        <li>{{summary}}</li>
+      </ul>
+      {{/if}}
       {{/each}}
     </div>
 	</div>
