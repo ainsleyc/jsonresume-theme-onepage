@@ -135,6 +135,7 @@
         {{/each}}
       </ul>
       {{/if}}
+      {{#unless @last}}<div class='separator'></div>{{/unless}}
       {{/each}}
     </div>
 	</div>
@@ -165,6 +166,7 @@
         {{/each}}
       </ul>
       {{/if}}
+      {{#unless @last}}<div class='separator'></div>{{/unless}}
       {{/each}}
     </div>
 	</div>
@@ -196,6 +198,7 @@
         </ul>
         {{/if}}
       </div>
+      {{#unless @last}}<div class='separator'></div>{{/unless}}
       {{/each}}
     </div>
 	</div>
@@ -210,22 +213,17 @@
     <div class='sectionContent'>
       {{#each resume.education}}
       <div class='educationBlock'>
-        <div>
-          <span class='studyType'>{{studyType}}</span>
-          <span class='area'>{{area}},</span>
-          <span class='institution'>{{institution}}</span>
-        </div> 
-        <div>
-          <span class='startDate'>{{startDate}}</span>
-          {{#if endDate}}
-          <span class='endDate'>- {{endDate}}</span>
-          {{else}}
-          <span class='endDate'>- Present</span>
-          {{/if}}
-          {{#if gpa}}
-          <span class='gpa'>, GPA: {{gpa}}</span>
-          {{/if}}
-        </div> 
+        <span class='title'>
+          {{#if institution}}{{institution}}{{/if}}
+        </span>
+        {{#if startDate}}
+        <span class='date'>
+          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}Present{{/if}}
+        </span>
+        {{/if}}
+        <div class=''>
+          {{#if studyType}}{{studyType}} {{/if}}{{#if area}}{{area}}{{/if}}{{#if gpa}}, GPA: {{gpa}}{{/if}}
+        </div>
         {{#if courses.length}}
         <div class='coursesBlock'>
           {{#each courses}}
@@ -238,6 +236,7 @@
         </div>
         {{/if}}
       </div>
+      {{#unless @last}}<div class='separator'></div>{{/unless}}
       {{/each}}
     </div>
 	</div>
