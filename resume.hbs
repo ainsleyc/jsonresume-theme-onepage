@@ -94,7 +94,6 @@
       <div><a href='{{website}}'>{{website}}</a></div>
       {{#if highlights.length}}
       <ul class='highlights'>
-        <li>{{summary}}</li>
         {{#each highlights}}
         <li>{{.}}</li>
         {{/each}}
@@ -129,9 +128,11 @@
         <a href='{{website}}'>{{website}}</a>
       </div>
       {{/if}}
-      {{#if summary}}
+      {{#if highlights.length}}
       <ul class='highlights'>
-        <li>{{summary}}</li>
+        {{#each highlights}}
+        <li>{{.}}</li>
+        {{/each}}
       </ul>
       {{/if}}
       {{/each}}
@@ -157,9 +158,11 @@
         </span>
         {{/if}}
       </div>
-      {{#if summary}}
+      {{#if highlights.length}}
       <ul class='highlights'>
-        <li>{{summary}}</li>
+        {{#each highlights}}
+        <li>{{.}}</li>
+        {{/each}}
       </ul>
       {{/if}}
       {{/each}}
@@ -175,25 +178,16 @@
     </div>
     <div class='sectionContent'>
       {{#each resume.volunteer}}
-      <div class='volunteerBlock'>
-        {{#if position}}
-        <span class='position'>{{position}},</span>
-        {{/if}}
-        {{#if organization}}
-        <span class='organization'>{{organization}}</span>
+      <div class='blockHeader'>
+        <span class='title'>{{#if organization}}{{organization}}{{/if}}{{#if position}}, {{position}}{{/if}}</span>
+        {{#if startDate}}
+        <span class='date'>
+          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}Present{{/if}}
+        </span>
         {{/if}}
         {{#if website}}
-        <span class='website'>({{website}})</span>
+        <div class='website'><a href='{{website}}'>{{website}}</a></div>
         {{/if}}
-        <span class='date'>
-          <span class='startDate'>{{startDate}}</span>
-          {{#if endDate}}
-          <span class='endDate'>- {{endDate}}</span>
-          {{else}}
-          <span class='endDate'>- Present</span>
-          {{/if}}
-        </span>
-        <div class='summary'>{{summary}}</div>
         {{#if highlights.length}}
         <ul class='highlights'>
           {{#each highlights}}

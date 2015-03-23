@@ -3,6 +3,13 @@ var Handlebars = require("handlebars");
 
 COURSES_COLUMNS = 3;
 
+PREPEND_SUMMARY_CATEGORIES = [
+  "work",
+  "volunteer",
+  "awards",
+  "publications"
+];
+
 function validateArray(arr) {
   return arr !== undefined && arr !== null && arr instanceof Array && arr.length > 0;
 }
@@ -28,6 +35,20 @@ function render(resume) {
       }
     });
   }
+
+  PREPEND_SUMMARY_CATEGORIES.forEach(function(category) {
+    if (resume[category] !== undefined) {
+      resume[category].forEach(function(block) {
+        if (block.highlights === undefined) {
+          block.highlights = [];
+        }
+        if (block.summary) {
+          block.highlights.unshift(block.summary);
+          delete block.summary;
+        }
+      });
+    }
+  });
 
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
