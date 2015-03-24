@@ -1,8 +1,8 @@
 body {
-	background: #fff;
+	background: #EEEEEE;
 	font: 12px Arial, Helvetica, sans-serif;
 	line-height: 1.4;
-	margin: 20px 0;
+	margin: 40px 0;
 }
 em {
 	color: #999;
@@ -26,7 +26,9 @@ blockquote {
 #resume {
 	margin: 0 auto;
 	max-width: 600px;
-	padding: 0 0px;
+	padding: 80px 100px;
+  border: 2px solid #CBCBCB;
+  background: #fff
 }
 #basics {
 	margin-bottom: -10px;
@@ -128,3 +130,12 @@ blockquote {
   margin-top: 6px;
 }
 
+@media print {
+  #resume {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0px 0px;
+    border: 0px;
+    background: #fff
+  }
+}
