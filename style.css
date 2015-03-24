@@ -17,16 +17,6 @@ a {
   text-decoration: none;
 }
 
-section {
-	margin-bottom: 2em;
-}
-blockquote {
-	margin: 0;
-	margin-bottom: 1em;
-}
-.item {
-	margin-bottom: 1em;
-}
 #resume {
 	margin: 0 auto;
 	max-width: 600px;
@@ -34,49 +24,11 @@ blockquote {
   border: 2px solid #CBCBCB;
   background: #fff
 }
-#basics {
-	margin-bottom: -10px;
-}
-#basics h3 {
-	margin-top: 1.5em;
-}
-#basics .contact strong,
-#location strong {
-	clear: both;
-	float: left;
-	line-height: 1.3;
-	width: 120px;
-}
-#profiles,
-#skills {
-	overflow: hidden;
-}
-#profiles .item,
-#skills .item {
-	float: left;
-	width: 50%;
-}
-
-.coursesBlock {
-
-}
 
 .coursesList {
   width: 28%;
   vertical-align: top;
   display: inline-block;
-}
-
-#nameBlock {
-}
-
-#basicsBlock {
-}
-
-#name {
-}
-
-#label {
 }
 
 .largeFont {

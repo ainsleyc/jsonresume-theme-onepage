@@ -26,7 +26,7 @@
     {{/if}}
   </div>
   <div id='basicsBlock' class='smallFont'>
-    <div id='contactBlock'>
+    <div class='contactBlock'>
       {{#if email}}
       <span class='email'>{{email}}</span>
       {{/if}}
@@ -225,7 +225,7 @@
           {{#if studyType}}{{studyType}} {{/if}}{{#if area}}{{area}}{{/if}}{{#if gpa}}, GPA: {{gpa}}{{/if}}
         </div>
         {{#if courses.length}}
-        <div class='coursesBlock'>
+        <div id='coursesBlock'>
           {{#each courses}}
           <ul class='coursesList'>
             {{#each .}}
