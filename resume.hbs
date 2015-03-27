@@ -87,7 +87,7 @@
         </span>
         {{#if startDate}}
         <span class='date'>
-          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}Present{{/if}}
+          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}-Present{{/if}}
         </span>
         {{/if}}
       </div>
@@ -252,7 +252,7 @@
       {{#each resume.skills}}
       <div class='skillBlock'>
         {{#if name}}
-        <span class='name'>{{name}}</span>
+        <span class='title'>{{name}}</span>
         {{/if}}
         {{#if level}}
         <span class='level'><em>({{level}})</em></span>
