@@ -35,15 +35,10 @@
       <span class='phone'>{{phone}}</span>
       {{/if}}
       {{#location}}
-        {{#if city}}
         <span class='divider'>|</span>
-        <span class='city'>
-          {{city}}{{#if countryCode}},{{/if}}
+        <span class='address'>
+          {{#if city}}{{city}}{{/if}}{{#if region}}, {{region}}{{/if}}{{#if countryCode}}, {{countryCode}}{{/if}}
         </span>
-        {{/if}}
-        {{#if countryCode}}
-        <span class='country'>{{countryCode}}</span>
-        {{/if}}
       {{/location}}
     </div>
     {{#if profiles.length}}
