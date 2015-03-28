@@ -87,6 +87,10 @@ a {
   margin-top: 6px;
 }
 
+.skillBlock {
+  margin-bottom: 4px;
+}
+
 @media print {
   #resume {
     margin: 0 auto;
