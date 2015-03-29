@@ -13,6 +13,9 @@ p {
 ul {
 	margin-bottom: 0;
 }
+li {
+	margin-bottom: 2px;
+}
 a {
   text-decoration: none;
 }
