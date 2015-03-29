@@ -94,6 +94,13 @@
         {{/each}}
       </ul>
       {{/if}}
+      {{#if details.length}}
+      <ul class='details'>
+        {{#each details}}
+        <li>{{#if text}}{{text}}{{/if}}{{#if comment}} <em>[{{comment}}]</em>{{/if}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
       {{#unless @last}}<div class='separator'></div>{{/unless}}
       {{/each}}
     </div>
@@ -254,7 +261,7 @@
         {{/if}}
         {{#if details.length}}
           {{#each details}}
-          <span>{{#if name}}{{name}}{{/if}}{{#if level}} <em>({{level}})</em>{{/if}}{{#unless @last}}, {{/unless}}</span>
+          <span>{{#if text}}{{text}}{{/if}}{{#if comment}} <em>({{comment}})</em>{{/if}}{{#unless @last}}, {{/unless}}</span>
           {{/each}}
         {{/if}}
       </div>
