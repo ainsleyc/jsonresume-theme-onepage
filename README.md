@@ -1,4 +1,4 @@
-# jsonresume-theme-compact
+# jsonresume-theme-onepage
 
 A compact theme for JSON Resume, designed for printing. 
 

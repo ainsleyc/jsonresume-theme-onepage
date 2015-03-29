@@ -1,11 +1,11 @@
 {
-  "name": "jsonresume-theme-compact",
+  "name": "jsonresume-theme-onepage",
   "version": "0.0.1",
   "description": "Compact, printable theme for JSON Resume",
   "author": "Ainsley Chong",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ainsleychong/jsonresume-theme-compact.git"
+    "url": "https://github.com/ainsleychong/jsonresume-theme-onepage.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -13,9 +13,9 @@
     "css": "2.2.x"
   },
   "bugs": {
-    "url": "https://github.com/ainsleychong/jsonresume-theme-compact/issues"
+    "url": "https://github.com/ainsleychong/jsonresume-theme-onepage/issues"
   },
-  "homepage": "https://github.com/ainsleychong/jsonresume-theme-compact",
+  "homepage": "https://github.com/ainsleychong/jsonresume-theme-onepage",
   "main": "index.js",
   "devDependencies": {}
 }
