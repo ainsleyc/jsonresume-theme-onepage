@@ -31,5 +31,5 @@ For the "experience" and "skills" sections, you can optionally replace the "high
 ]
 ```
 
-See sample resume.json for more details.
+See included resume.json for more details.
 
