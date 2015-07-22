@@ -1,31 +1,33 @@
 body {
-	background: #EEEEEE;
-	font: 12px "Times New Roman", Times, sans-serif;
-	line-height: 1.4;
-	margin: 40px 0;
+  background: #EEEEEE;
+  font: 12px "Times New Roman", Times, sans-serif;
+  line-height: 1.4;
+  margin: 40px 0;
 }
 em {
-	color: #999;
+  color: #999;
 }
 p {
-	line-height: 1.4;
+  line-height: 1.4;
 }
 ul {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 li {
-	margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 a {
   text-decoration: none;
 }
 
 #resume {
-	margin: 0 auto;
-	max-width: 600px;
-	padding: 80px 100px;
-  border: 2px solid #CBCBCB;
-  background: #fff
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 80px 100px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px #aaa;
+  -webkit-box-shadow: 2px 2px 4px #aaa;
 }
 
 .coursesList {
@@ -94,12 +96,43 @@ a {
   margin-bottom: 4px;
 }
 
+/* Media Queries */
+@media only screen and (max-width: 40em) {
+  body {
+    margin: 0;
+    font-size: 14px;
+  }
+  #resume {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0.5em 1em;
+    border: none;
+  }
+  .sectionContent {
+    width: 100%;
+  }
+  .sectionContent .date {
+    padding-right: 2em;
+  }
+  .sectionName {
+    width: auto;
+  }
+  .largeFont {
+    font-size: 20px;
+  }
+  .smallFont {
+    font-size: 14px;
+  }
+}
+
 @media print {
   #resume {
     margin: 0 auto;
     max-width: 600px;
     padding: 0px 0px;
     border: 0px;
-    background: #fff
+    background: #fff;
+    box-shadow: none;
+    -webkit-box-shadow: none;
   }
 }
