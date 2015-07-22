@@ -1,20 +1,20 @@
 body {
-	background: #EEEEEE;
-	font: 12px "Times New Roman", Times, sans-serif;
-	line-height: 1.4;
-	margin: 40px 0;
+  background: #EEEEEE;
+  font: 12px "Times New Roman", Times, sans-serif;
+  line-height: 1.4;
+  margin: 40px 0;
 }
 em {
-	color: #999;
+  color: #999;
 }
 p {
-	line-height: 1.4;
+  line-height: 1.4;
 }
 ul {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 li {
-	margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 a {
   text-decoration: none;
