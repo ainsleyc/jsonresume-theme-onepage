@@ -132,5 +132,7 @@ a {
     padding: 0px 0px;
     border: 0px;
     background: #fff
+    box-shadow: none;
+    -webkit-box-shadow: none;
   }
 }
