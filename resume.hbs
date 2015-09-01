@@ -15,7 +15,6 @@
 	<body>
 	
 	<div id='resume'>
-
 	{{#resume.basics}}
   <div id='nameBlock' class='largeFont'>
     <span class='name'>
@@ -296,18 +295,18 @@
     </div>
     <div class='sectionContent'>
       {{#each resume.interests}}
-      <span class='name'>{{name}}</span>
+      <span class='name'>{{name}}</span><!--
       {{#if keywords.length}}
-      <span class='keywords'><em>[
+      --><span class='keywords'><em>[
       {{#each keywords}} 
         {{.}}
         {{#unless @last}}, {{/unless}}
       {{/each}}
-      ]</em></span>
+      ]</em></span><!--
       {{/if}}
-      {{#unless @last}}<span>,</span>{{/unless}}
+      {{#unless @last}}--><span>, </span>{{/unless}}
       {{/each}}
-    </div>
+    --></div>
     <div class='sectionLine'></div>
 	</div>
   {{/if}}
