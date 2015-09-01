@@ -297,16 +297,16 @@
       {{#each resume.interests}}
       <span class='name'>{{name}}</span><!--
       {{#if keywords.length}}
-      --><span class='keywords'><em>[
+      --><span class='keywords'> <em>[
       {{#each keywords}} 
-        {{.}}
-        {{#unless @last}}, {{/unless}}
+        {{.}}<!--
+        -->{{#unless @last}}, {{/unless}}
       {{/each}}
       ]</em></span><!--
       {{/if}}
-      {{#unless @last}}--><span>, </span>{{/unless}}
+      -->{{#unless @last}}<span>, </span>{{/unless}}
       {{/each}}
-    --></div>
+    </div>
     <div class='sectionLine'></div>
 	</div>
   {{/if}}
