@@ -44,6 +44,11 @@ a {
   font-size: 12px;
 }
 
+.sectionBlock {
+  display: flex;
+  width: 100%;
+}
+
 .sectionName {
   width: 18%;
   vertical-align: top;
@@ -53,7 +58,7 @@ a {
 .sectionContent {
   width: 80%;
   vertical-align: top;
-  display: inline-block
+  display: inline-block;
 }
 
 .sectionContent ul {
@@ -96,6 +101,10 @@ a {
   margin-bottom: 4px;
 }
 
+.jobBlock {
+  page-break-inside: avoid;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 40em) {
   body {
@@ -134,5 +143,9 @@ a {
     background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;
+  }
+
+  a {
+    color: black;
   }
 }
