@@ -82,7 +82,7 @@
 	        </span>
 	        {{#if startDate}}
 	        <span class='date'>
-	          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}} &mdash; {{endDate}}{{/if}}
+	          {{#if startDate}}{{startDate}}{{/if}} &mdash; {{#if endDate}}{{endDate}}{{else}}Present{{/if}}
 	        </span>
 	        {{/if}}
 	      </div>
@@ -187,7 +187,7 @@
         <span class='title'>{{#if organization}}{{organization}}{{/if}}{{#if position}}, {{position}}{{/if}}</span>
         {{#if startDate}}
         <span class='date'>
-          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}} &mdash; {{endDate}}{{else}}Present{{/if}}
+          {{#if startDate}}{{startDate}}{{/if}} &mdash; {{#if endDate}}{{endDate}}{{else}}Present{{/if}}
         </span>
         {{/if}}
         {{#if website}}
@@ -221,7 +221,7 @@
         </span>
         {{#if startDate}}
         <span class='date'>
-          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}} &mdash; {{endDate}}{{else}}Present{{/if}}
+          {{#if startDate}}{{startDate}}{{/if}} &mdash; {{#if endDate}}{{endDate}}{{else}}Present{{/if}}
         </span>
         {{/if}}
         <div class=''>
