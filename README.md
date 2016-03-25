@@ -6,7 +6,7 @@ Tries to fit as much information as possible onto a single page without making s
 
 ## Example
 
-http://ainsleyc.co/jsonresume-theme-onepage.html
+http://themes.jsonresume.org/theme/onepage
 
 ## Running
 
