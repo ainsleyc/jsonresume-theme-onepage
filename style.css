@@ -1,6 +1,6 @@
 body {
   background: #EEEEEE;
-  font: 12px "Times New Roman", Times, sans-serif;
+  font: 13px "Times New Roman", Times, sans-serif;
   line-height: 1.4;
   margin: 40px 0;
 }
@@ -41,7 +41,7 @@ a {
 }
 
 .smallFont {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .sectionBlock {
@@ -117,6 +117,9 @@ a {
     padding: 0.5em 1em;
     border: none;
   }
+  .sectionBlock {
+    flex-direction: column;
+  }
   .sectionContent {
     width: 100%;
   }
@@ -135,6 +138,9 @@ a {
 }
 
 @media print {
+  body {
+    background: #FFFFFF;
+  }
   #resume {
     margin: 0 auto;
     max-width: 600px;
