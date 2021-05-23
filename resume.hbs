@@ -39,6 +39,10 @@
           {{#if city}}{{city}}{{/if}}{{#if region}}, {{region}}{{/if}}{{#if countryCode}}, {{countryCode}}{{/if}}
         </span>
       {{/location}}
+       {{#if website}}
+      <span class='divider'>|</span>
+      <span class='website'>{{website}}</span>
+      {{/if}}
     </div>
     {{#if profiles.length}}
       <div id='profilesBlock'>
